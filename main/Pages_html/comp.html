@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site Web personnel</title>
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #d8ebf7; /* Beige clair */
+            color: #333;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #0056b3; /* Beige foncé */
+            color: white;
+            text-align: center;
+            padding:  0.3rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3; /* Beige moyen */
+            padding: 0.5rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        } 
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+
+        }
+
+        .nav-link:hover {
+            background-color: #004080;
+        }
+
+        /* Section principale */
+        .COMP {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        #comp {
+            background-color: #fffaf0; /* Ivoire */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #comp img {
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .compet3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: #0056b3;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        main img.arrondie {
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        main h2 {
+            color: #19538d; /* Beige moyen */
+        }
+
+        main h3 {
+            margin-top: 1rem;
+            color: #003366;
+        }
+
+        main p {
+            text-align: justify;
+            background-color: #fffaf0; /* Ivoire */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .footer-item h4 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .footer-item p,
+        .footer-item a,
+        .footer-item strong {
+            color: #e0e0e0;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        .footer-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #b0c4de;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a class="nav-link active" aria-current="page" href="acceuil.html">Accueil</a>
+            <a class="nav-link active" href="Parcours.html">Parcours Académique</a>
+            <a class="nav-link active" href="comp.html">Compétences Informatiques</a>
+            <a class="nav-link active" href="vieasso.html">Vie associative</a>
+            <a class="nav-link active" href="passions.html">Passions</a>
+            <a class="nav-link active" href="quiz.html">Quiz </a>
+            <a class="nav-link active" href="cantact.html">Contact</a>
+            <a class="nav-link active" href="stages.html">Stages</a>
+        </nav>
+     
+    </header>
+    <nav style="font-size: 30px;margin-top: 20px;">Compétences Informatique</nav>
+    <section class="COMP" style="padding: 20px;">
+        <article id="comp" style="text-align: center;">
+            <h2 style="margin-bottom: 20px;">Développement web :</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <div style="text-align: center;">
+                    <img src="Images/JEE.png" width="100px" height="100px" alt="Python">
+                    <p>JEE</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/javasc_img.png" width="150px" height="100px" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/html_img.png" width="100px" height="100px" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/C_img.png" width="100px" height="100px" alt="Programmation C">
+                    <p>Programmation C</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/css.png" width="100px" height="100px" alt="SQL Server">
+                    <p>CSS</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/vscode_img.png" width="100px" height="100px" alt="Visual Studio Code">
+                    <p>Outil de développement : Visual Studio Code</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    
+    <section class="COMP" style="padding: 20px;">
+        <article id="comp" style="text-align: center;">
+            <h2 style="margin-bottom: 20px;">Développement embarqué:</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <div style="text-align: center;">
+                    <img src="Images/PI.png" width="100px" height="100px" alt="Python">
+                    <p>Raspberry Pi</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/STM32.jpg" width="150px" height="100px" alt="JavaScript">
+                    <p>STM32</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/ESP.jpg" width="100px" height="100px" alt="HTML">
+                    <p>ESP32</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/arduino.png" width="100px" height="100px" alt="Programmation C">
+                    <p>Arduino</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/auto.png" width="100px" height="100px" alt="SQL Server">
+                    <p>automate siemens</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/ide.png" width="100px" height="100px" alt="Visual Studio Code">
+                    <p>Arduino IDE</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    <section class="COMP" style="padding: 20px;">
+        <article id="comp" style="text-align: center;">
+            <h2 style="margin-bottom: 20px;">Développement AR</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <div style="text-align: center;">
+                    <img src="Images/unity.png" width="100px" height="100px" alt="Python">
+                    <p>Unity</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/vufo.png" width="150px" height="100px" alt="JavaScript">
+                    <p>vuforia</p>
+                </div>
+            </div>
+        </article>
+        
+    </section>
+    <section class="COMP" style="padding: 20px;">
+        <article id="comp" style="text-align: center;">
+            <h2 style="margin-bottom: 20px;">Développement IA</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                <div style="text-align: center;">
+                    <img src="Images/ML.png" width="100px" height="100px" alt="Python">
+                    <p>Machin Learning</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/DL.jpg" width="150px" height="100px" alt="JavaScript">
+                    <p>Deep Learning</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Images/google.png" width="150px" height="100px" alt="JavaScript">
+                    <p>Google Colab </p>
+                </div>
+            </div>
+        </article>
+        
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Adresse :</h4>
+                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Email :</h4>
+                    <a href="mailto:eyas92931@gmail.com">eyas92931@gmail.com</a>
+                </div>
+                <div class="footer-item">
+                    <h4>Téléphone :</h4>
+                    <strong>51 043 305</strong>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

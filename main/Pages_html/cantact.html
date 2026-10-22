@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site Web personnel</title>
+
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #004080;
+        }
+
+        /* Contact form */
+        section.contact {
+            padding: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section.contact h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .footer-item h4 {
+            color: #4db8ff;
+            margin-bottom: 10px;
+        }
+
+        .footer-item p,
+        .footer-item a,
+        .footer-item strong {
+            color: #e0e0e0;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: #4db8ff;
+        }
+
+        .footer-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #b0c4de;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link" href="acceuil.html">Accueil</a>
+            <a class="nav-link" href="Parcours.html">Parcours Académique</a>
+            <a class="nav-link" href="comp.html">Compétences Informatiques</a>
+            <a class="nav-link" href="vieasso.html">Vie associative</a>
+            <a class="nav-link" href="passions.html">Passions</a>
+            <a class="nav-link" href="quiz.html">Quiz</a>
+            <a class="nav-link" href="cantact.html">Contact</a>
+            <a class="nav-link active" href="stages.html">Stages</a>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Forme de Contact</h2>
+        <form>
+            <input type="text" name="fullname" placeholder="Votre Nom" required>
+            <input type="email" name="email" placeholder="Adresse d'email" required>
+            <textarea name="message" rows="10" placeholder="Votre message"></textarea>
+            <button type="submit">Valider</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Adresse :</h4>
+                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Email :</h4>
+                    <a href="mailto:eyas92931@gmail.com">eyas92931@gmail.com</a>
+                </div>
+                <div class="footer-item">
+                    <h4>Téléphone :</h4>
+                    <strong>51 043 305</strong>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

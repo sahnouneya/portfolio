@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site Web personnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f7f6; /* Gris clair */
+            color: #333;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #0056b3; /* Bleu profond */
+            color: white;
+            text-align: center;
+            padding:0.3rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 0.3rem 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #004080;
+            transform: scale(1.1);
+
+        }
+
+        /* Section principale */
+        .bro {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #parcours1 {
+            text-align: justify;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .arrondie {
+            border-radius: 15px;
+            box-shadow: #0056b3;
+            display: block;
+            margin: 2rem auto;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .arrondie:hover {
+            transform: scale(1.05);
+        }
+
+        .alignement {
+            text-align: left;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .footer-item h4 {
+            color: #4db8ff;
+            margin-bottom: 10px;
+        }
+
+        .footer-item p,
+        .footer-item a,
+        .footer-item strong {
+            color: #e0e0e0;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: #4db8ff;
+        }
+
+        .footer-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #b0c4de;
+        }
+         nav h1:hover {
+            color: #00bfae; /* Vert turquoise clair */
+            transform: scale(1.1);
+        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-link {
+                margin-bottom: 0.75rem;
+                font-size: 1.1rem;
+            }
+
+            .arrondie {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Menu de navigation -->
+        <nav class="nav">
+            <a class="nav-link" href="acceuil.html">Accueil</a>
+            <a class="nav-link" href="Parcours.html">Parcours Académique</a>
+            <a class="nav-link" href="comp.html">Compétences Informatiques</a>
+            <a class="nav-link" href="vieasso.html">Vie associative</a>
+            <a class="nav-link" href="passions.html">Passions</a>
+            <a class="nav-link" href="quiz.html">Quiz</a>
+            <a class="nav-link" href="cantact.html">Contact</a>
+            <a class="nav-link active" href="stages.html">Stages</a>
+        </nav>
+    </header>
+
+    
+
+
+    <section class="bro">
+        <!-- Baccalauréat -->
+        <div class="photo-paragraphe">
+            <img src="Images/bac.jpeg" alt="Diplôme de Baccalauréat" class="arrondie" width="400px" height="200px">
+            <p id="parcours1">
+                J'ai obtenu mon diplôme de Baccalauréat en Sciences Expérimentales en juillet 2021, au lycée Abou Kacem Chebbi.
+            </p>
+        </div>
+    </section>
+    
+    <section class="bro">
+        <!-- Diplôme ENET'Com -->
+        <div class="photo-paragraphe">
+            <img src="Images/DIPLOME ENETCOM.png" alt="Diplôme ENET'Com" class="arrondie" width="400px" height="200px">
+            <p id="parcours1">
+                J'ai obtenu mon diplôme de Licence en Technologie de l'Information et de la Communication à l'ENET'Com.
+            </p>
+        </div>
+    </section>
+    
+    <section class="bro">
+        <!-- Travail chez Lunar -->
+        <div class="photo-paragraphe">
+            <img src="Images/lunar.jpg" alt="Travail chez Lunar" class="arrondie" width="400px" height="200px">
+            <p id="parcours1">
+                Actuellement, je travaille en tant que développeur backend chez Lunar, où je fais face à de nouveaux défis chaque jour.
+            </p>
+        </div>
+    </section>
+    
+    <section class="bro">
+        <!-- Formation IIT -->
+        <div class="photo-paragraphe">
+            <img src="Images/IIT.png" alt="Formation IIT" class="arrondie" width="400px" height="400px">
+            <p id="parcours1">
+                J'ai entamé ma formation d'ingénieur en informatique à l'IIT en septembre 2024.
+            </p>
+        </div>
+    </section>
+    
+    <style>
+        .bro {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .photo-paragraphe {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+    
+        .photo-paragraphe img {
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+    
+        .photo-paragraphe img:hover {
+            transform: scale(1.05);
+        }
+    
+        .photo-paragraphe p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+            max-width: 800px;
+        }
+    
+        @media (max-width: 768px) {
+            .photo-paragraphe {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .photo-paragraphe img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Adresse :</h4>
+                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Email :</h4>
+                    <a href="mailto:eyas92931@gmail.com">eyas92931@gmail.com</a>
+                </div>
+                <div class="footer-item">
+                    <h4>Téléphone :</h4>
+                    <strong>51 043 305</strong>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

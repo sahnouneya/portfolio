@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil de Eya Sahnoun</title>
+    <style>
+        /* Style général */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #f0f0f0, #ffffff);
+            color: #333;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 0.3rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        nav .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        nav .nav-link:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        /* Section principale */
+        section {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #3b5998;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Style spécifique pour les passions */
+        .passions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .passion-item {
+            background: #f7f9fc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .passion-item:hover {
+            transform: scale(1.05);
+        }
+
+        .passion-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .passion-item h3 {
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #b0c4de;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link active" href="acceuil.html">Accueil</a>
+            <a class="nav-link active" href="Parcours.html">Parcours Académique</a>
+            <a class="nav-link active" href="comp.html">Compétences Informatiques</a>
+            <a class="nav-link active" href="vieasso.html">Vie associative</a>
+            <a class="nav-link active" href="passions.html">Passions</a>
+            <a class="nav-link active" href="quiz.html">Quiz</a>
+            <a class="nav-link active" href="cantact.html">Contact</a>
+            <a class="nav-link active" href="stages.html">Stages</a>
+        </nav>
+    </header>
+
+
+    <section>
+        <h2>Mes Passions</h2>
+        <div class="passions">
+            <div class="passion-item">
+                <img src="Images/cycle.jpg" alt="Cyclisme">
+                <h3>Cyclisme</h3>
+                <p>Le cyclisme est une passion qui me permet de me dépasser physiquement et de découvrir de magnifiques paysages.</p>
+            </div>
+            <div class="passion-item">
+                <img src="Images/jardin.jpg" alt="Nature" style="height: 500px;">
+                <h3>Nature</h3>
+                <p>J'adore passer du temps dans mon jardin, planter pour récolter des aliments bio.</p>
+            </div>
+            <div class="passion-item">
+                <img src="Images/sport.jpg" alt="Sport">
+                <h3>Sport</h3>
+                <p>Le sport est essentiel pour mon équilibre mental et physique. Il m'aide à rester concentrée et motivée.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

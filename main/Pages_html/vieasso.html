@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil de Eya Sahnoun</title>
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dbe9f8; /* Beige clair */
+            color: #333;
+            line-height: 1.6;
+
+        }
+
+        /* En-tête */
+        header {
+            background-color: #0056b3; /* Beige foncé */
+            color: white;
+            text-align: center;
+            padding: 0.3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3; /* Beige moyen */
+            padding: 0.5rem 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #004080;
+            transform: scale(1.1);
+        }
+
+        /* Section principale */
+        .bro {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #c7ddf1; /* Ivoire */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bro article {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .bro h3 {
+            color: #004080;
+            font-size: 1.3rem;
+        }
+
+        .bro ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .bro ul li {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .footer-item h4 {
+            color: #4db8ff;
+            margin-bottom: 10px;
+        }
+
+        .footer-item p,
+        .footer-item a,
+        .footer-item strong {
+            color: #e0e0e0;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: #4db8ff;
+        }
+
+        .footer-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            color: #b0c4de;
+        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-link {
+                margin-bottom: 0.5rem;
+            }
+
+            .bro {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a class="nav-link active" aria-current="page" href="acceuil.html">Accueil</a>
+            <a class="nav-link active" href="Parcours.html">Parcours Académique</a>
+            <a class="nav-link active" href="comp.html">Compétences Informatiques</a>
+            <a class="nav-link active" href="vieasso.html">Vie associative</a>
+            <a class="nav-link active" href="passions.html">Passions</a>
+            <a class="nav-link active" href="quiz.html">Quiz</a>
+            <a class="nav-link active" href="cantact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="bro">
+        <article>
+            <h3>Clubs dont j'été membre :</h3>
+            <ul>
+                <li>IEEE Enetcom SB</li>
+                <img src="Images/images.png">
+            </ul>
+        </article>
+        <article>
+            <h3>Formations et journées scientifiques :</h3>
+            <ul>
+                <li>Formation en robotique Enetcom</li>
+                <li>Participation à Xtream 2022/2023</li>
+                <li>Organisation de l’évenement  i4s IEEE </li>
+            </ul>
+        </article>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Adresse :</h4>
+                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Email :</h4>
+                    <a href="mailto:eyas92931@gmail.com">eyas92931@gmail.com</a>
+                </div>
+                <div class="footer-item">
+                    <h4>Téléphone :</h4>
+                    <strong>51 043 305</strong>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mes Stages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 5px 0 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004080;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            background-color: #003366;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .experience {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience h2 {
+            color: #0056b3;
+            margin: 0 0 10px;
+        }
+
+        .experience p {
+            margin: 5px 0 15px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Mes Stages</h1>
+        <p>Une vue d'ensemble de mes expériences professionnelles et académiques.</p>
+    </header>
+    <nav>
+        <a class="nav-link" href="acceuil.html">Accueil</a>
+        <a class="nav-link" href="Parcours.html">Parcours Académique</a>
+        <a class="nav-link" href="comp.html">Compétences Informatiques</a>
+        <a class="nav-link" href="vieasso.html">Vie Associative</a>
+        <a class="nav-link" href="passions.html">Passions</a>
+        <a class="nav-link" href="quiz.html">Quiz</a>
+        <a class="nav-link" href="cantact.html">Contact</a>
+        <a class="nav-link active" href="stages.html">Stages</a>
+    </nav>
+    
+    <div class="container">
+        <div class="experience">
+            <h2>Projet de fin d’étude (Technology Development System)</h2>
+            <p><strong>Période :</strong> Février 2024 - Juin 2024</p>
+            <ul>
+                <li>Développement d'une application de réalité augmentée (AR).</li>
+                <li>Création et intégration des éléments AR interactifs avec Unity et Vuforia.</li>
+                <li>Implémentation des fonctionnalités IoT en collaboration.</li>
+                <li>Utilisation de Firebase et ESP32 pour permettre une communication en temps réel démontrant la synergie entre AR et IoT.</li>
+                <li>Connexion avec des automates industriels.</li>
+                <li>Tentatives d'intégration de la norme OPC UA pour connecter l'application à des automates industriels.</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <h2>Stage technique (Centre de recherche numérique)</h2>
+            <p><strong>Période :</strong> Juin 2023 - Juillet 2023</p>
+            <ul>
+                <li>Développement d'une application de détection d'anomalies dans les IRM cérébrales par le deep learning.</li>
+                <li>Utilisation du réseau de neurones convolutifs (CNN).</li>
+                <li>Optimisation avec l'optimiseur RMSProp.</li>
+                <li>Amélioration des performances du modèle choisi.</li>
+                <li>Fabrication et programmation d'un robot suiveur de ligne.</li>
+                <li>Fabrication et programmation d’un éviteur d’obstacle.</li>
+                <li>Câblage et programmation d’un radar ultrasonique mesurant la distance selon la position d’un servomoteur.</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <h2>Stage technique (Centre clientèle de Télécom)</h2>
+            <p><strong>Période :</strong> Juin 2022 - Juillet 2022</p>
+            <ul>
+                <li>Participation active à la résolution efficace des réclamations.</li>
+                <li>Contribution au suivi rigoureux du traitement des factures.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2024 - Mon Portfolio. Tous droits réservés.
+    </footer>
+</body>
+</html>
