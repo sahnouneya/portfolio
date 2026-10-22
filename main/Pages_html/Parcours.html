@@ -1,309 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site Web personnel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles globaux */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f7f6; /* Gris clair */
-            color: #333;
-        }
-
-        /* En-tête */
-        header {
-            background-color: #0056b3; /* Bleu profond */
-            color: white;
-            text-align: center;
-            padding:0.3rem 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: center;
-            background-color: #0056b3;
-            padding: 0.3rem 0;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: #004080;
-            transform: scale(1.1);
-
-        }
-
-        /* Section principale */
-        .bro {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        #parcours1 {
-            text-align: justify;
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .arrondie {
-            border-radius: 15px;
-            box-shadow: #0056b3;
-            display: block;
-            margin: 2rem auto;
-            max-width: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .arrondie:hover {
-            transform: scale(1.05);
-        }
-
-        .alignement {
-            text-align: left;
-            padding: 2rem;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            font-size: 1.1rem;
-        }
-
-        /* Pied de page */
-        footer {
-            background-color: #003366;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        .footer-item h4 {
-            color: #4db8ff;
-            margin-bottom: 10px;
-        }
-
-        .footer-item p,
-        .footer-item a,
-        .footer-item strong {
-            color: #e0e0e0;
-        }
-
-        .footer-item a {
-            text-decoration: none;
-            color: #4db8ff;
-        }
-
-        .footer-item a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            margin-top: 20px;
-            color: #b0c4de;
-        }
-         nav h1:hover {
-            color: #00bfae; /* Vert turquoise clair */
-            transform: scale(1.1);
-        }
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-link {
-                margin-bottom: 0.75rem;
-                font-size: 1.1rem;
-            }
-
-            .arrondie {
-                width: 100%;
-                height: auto;
-            }
-
-        }
-    </style>
+    <title>Parcours académique — Eya Sahnoun</title>
+    <meta name="description" content="Parcours académique d'Eya Sahnoun.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="theme.css">
-    <script src="site.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <!-- Menu de navigation -->
-        <nav class="nav">
-            <a class="nav-link" href="acceuil.html">Accueil</a>
-            <a class="nav-link" href="Parcours.html">Parcours Académique</a>
-            <a class="nav-link" href="comp.html">Compétences Informatiques</a>
-            <a class="nav-link" href="vieasso.html">Vie associative</a>
-            <a class="nav-link" href="passions.html">Passions</a>
-            <a class="nav-link" href="quiz.html">Quiz</a>
-            <a class="nav-link" href="cantact.html">Contact</a>
-            <a class="nav-link active" href="stages.html">Stages</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+            <nav class="nav" id="nav" aria-label="Navigation principale">
+                <a href="acceuil.html">Accueil</a>
+                <a href="Parcours.html">Parcours</a>
+                <a href="comp.html">Compétences</a>
+                <a href="stages.html">Stages</a>
+                <a href="vieasso.html">Vie associative</a>
+                <a href="passions.html">Passions</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="cantact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    
+    <main>
+        <section class="page-head">
+            <div class="wrap">
+                <span class="eyebrow">Parcours</span>
+                <h1>Parcours académique</h1>
+                <p>Des sciences expérimentales au génie informatique, en passant par l'IoT.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <ol class="timeline">
+                <li class="reveal">
+                    <span class="date">Depuis 2024</span>
+                    <div>
+                        <h3>Cycle ingénieur en informatique — IIT</h3>
+                        <p>J'ai commencé ma formation d'ingénieure en génie informatique à l'Institut International de Technologie en septembre 2024.</p>
+                    </div>
+                    <img src="Images/IIT.png" alt="Institut International de Technologie" loading="lazy">
+                </li>
+                <li class="reveal">
+                    <span class="date">Aujourd'hui</span>
+                    <div>
+                        <h3>Développeuse backend — Lunar</h3>
+                        <p>En parallèle, je travaille comme développeuse backend chez Lunar, où je relève de nouveaux défis chaque jour.</p>
+                    </div>
+                    <img src="Images/lunar.jpg" alt="Lunar" loading="lazy">
+                </li>
+                <li class="reveal">
+                    <span class="date">2024</span>
+                    <div>
+                        <h3>Licence TIC — ENET'Com Sfax</h3>
+                        <p>Licence en Technologies de l'Information et de la Communication, spécialité IoT, à l'École Nationale d'Électronique et des Télécommunications de Sfax.</p>
+                    </div>
+                    <img src="Images/DIPLOME ENETCOM.png" alt="Diplôme de l'ENET'Com" loading="lazy">
+                </li>
+                <li class="reveal">
+                    <span class="date">2021</span>
+                    <div>
+                        <h3>Baccalauréat Sciences expérimentales</h3>
+                        <p>Obtenu en juillet 2021 au lycée Abou Kacem Chebbi.</p>
+                    </div>
+                    <img src="Images/bac.jpeg" alt="Diplôme du baccalauréat" loading="lazy">
+                </li>
+                </ol>
+            </div>
+        </section>
+    </main>
 
-
-    <section class="bro">
-        <!-- Baccalauréat -->
-        <div class="photo-paragraphe">
-            <img src="Images/bac.jpeg" alt="Diplôme de Baccalauréat" class="arrondie" width="400px" height="200px">
-            <p id="parcours1">
-                J'ai obtenu mon diplôme de Baccalauréat en Sciences Expérimentales en juillet 2021, au lycée Abou Kacem Chebbi.
-            </p>
-        </div>
-    </section>
-    
-    <section class="bro">
-        <!-- Diplôme ENET'Com -->
-        <div class="photo-paragraphe">
-            <img src="Images/DIPLOME ENETCOM.png" alt="Diplôme ENET'Com" class="arrondie" width="400px" height="200px">
-            <p id="parcours1">
-                J'ai obtenu mon diplôme de Licence en Technologie de l'Information et de la Communication à l'ENET'Com.
-            </p>
-        </div>
-    </section>
-    
-    <section class="bro">
-        <!-- Travail chez Lunar -->
-        <div class="photo-paragraphe">
-            <img src="Images/lunar.jpg" alt="Travail chez Lunar" class="arrondie" width="400px" height="200px">
-            <p id="parcours1">
-                Actuellement, je travaille en tant que développeur backend chez Lunar, où je fais face à de nouveaux défis chaque jour.
-            </p>
-        </div>
-    </section>
-    
-    <section class="bro">
-        <!-- Formation IIT -->
-        <div class="photo-paragraphe">
-            <img src="Images/IIT.png" alt="Formation IIT" class="arrondie" width="400px" height="400px">
-            <p id="parcours1">
-                J'ai entamé ma formation d'ingénieur en informatique à l'IIT en septembre 2024.
-            </p>
-        </div>
-    </section>
-    
-    <style>
-        .bro {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-    
-        .photo-paragraphe {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            background-color: #ffffff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-    
-        .photo-paragraphe img {
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-    
-        .photo-paragraphe img:hover {
-            transform: scale(1.05);
-        }
-    
-        .photo-paragraphe p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.6;
-            text-align: justify;
-            max-width: 800px;
-        }
-    
-        @media (max-width: 768px) {
-            .photo-paragraphe {
-                flex-direction: column;
-                text-align: center;
-            }
-    
-            .photo-paragraphe img {
-                width: 100%;
-                height: auto;
-            }
-        }
-    </style>
-    
-
-    
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-item">
-                    <h4>Adresse :</h4>
-                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+                    <p style="margin-top:10px">Élève ingénieure en génie informatique à l'IIT, Sfax.</p>
                 </div>
-                <div class="footer-item">
-                    <h4>Email :</h4>
+                <div>
+                    <h4>Email</h4>
                     <a href="mailto:eyas92931@gmail.com">eyas92931@gmail.com</a>
                 </div>
-                <div class="footer-item">
-                    <h4>Téléphone :</h4>
-                    <strong>51 043 305</strong>
+                <div>
+                    <h4>Téléphone</h4>
+                    <a href="tel:+21651043305">51 043 305</a>
+                </div>
+                <div>
+                    <h4>Adresse</h4>
+                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Eya Sahnoun. Tous droits réservés.</p>
-            </div>
+            <p class="footer-bottom">&copy; <span data-year>2026</span> Eya Sahnoun</p>
         </div>
     </footer>
 </body>
-
 </html>
