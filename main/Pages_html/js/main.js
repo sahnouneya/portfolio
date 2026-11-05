@@ -71,4 +71,63 @@
                 encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
     }
+    // Captures d'écran des projets : on masque les emplacements sans image
+    // et on ouvre la capture en grand au clic.
+    var galleries = document.querySelectorAll('.shots');
+    if (galleries.length) {
+        var box = document.createElement('dialog');
+        box.className = 'lightbox';
+        box.innerHTML = '<img alt=""><div class="lightbox-bar">' +
+            '<button type="button" data-step="-1">Précédente</button>' +
+            '<button type="button" data-close>Fermer</button>' +
+            '<button type="button" data-step="1">Suivante</button></div>';
+        document.body.appendChild(box);
+        var bigImg = box.querySelector('img');
+        var list = [], index = 0;
+
+        function show(i) {
+            index = (i + list.length) % list.length;
+            bigImg.src = list[index].href;
+            bigImg.alt = list[index].querySelector('img').alt;
+        }
+
+        box.addEventListener('click', function (e) {
+            if (e.target === box || e.target.hasAttribute('data-close')) box.close();
+            else if (e.target.hasAttribute('data-step')) show(index + Number(e.target.getAttribute('data-step')));
+        });
+        box.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') show(index + 1);
+            if (e.key === 'ArrowLeft') show(index - 1);
+        });
+
+        galleries.forEach(function (gallery) {
+            function refresh() {
+                var visible = gallery.querySelectorAll('li:not([hidden])').length;
+                var note = gallery.nextElementSibling;
+                var hasNote = note && note.classList.contains('shots-empty');
+                if (!visible && !hasNote) {
+                    note = document.createElement('p');
+                    note.className = 'shots-empty';
+                    note.textContent = "Captures d'écran bientôt disponibles";
+                    gallery.after(note);
+                } else if (visible && hasNote) {
+                    note.remove();
+                }
+                gallery.hidden = !visible;
+            }
+            gallery.querySelectorAll('img').forEach(function (img) {
+                function hide() { img.closest('li').hidden = true; refresh(); }
+                img.addEventListener('error', hide);
+                if (img.complete && !img.naturalWidth) hide();
+            });
+            gallery.addEventListener('click', function (e) {
+                var link = e.target.closest('a');
+                if (!link || typeof box.showModal !== 'function') return;
+                e.preventDefault();
+                list = Array.prototype.slice.call(gallery.querySelectorAll('li:not([hidden]) a'));
+                box.showModal();
+                show(list.indexOf(link));
+            });
+        });
+    }
 })();
