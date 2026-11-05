@@ -516,6 +516,74 @@ p { margin: 0 0 1em; }
 
 .lightbox-bar button:hover { background: var(--accent); color: var(--paper); }
 
+/* ---------- Projets mis en avant ---------- */
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 30px -18px rgba(31, 27, 24, 0.35);
+}
+
+.feature:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.feature-kind {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.feature h3 { font-size: 1.55rem; margin: 10px 0 10px; }
+.feature p { color: var(--ink-soft); flex: 1; }
+.feature .tags { margin-bottom: 18px; }
+.feature-more { font-weight: 600; }
+.feature:hover .feature-more { color: var(--accent); }
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px;
+    margin-bottom: 24px;
+    scroll-margin-top: 90px;
+}
+
+.project-card:target { border-color: var(--accent); }
+
+.project-num {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
 /* ---------- Vie associative ---------- */
 
 .asso {
@@ -680,6 +748,7 @@ p { margin: 0 0 1em; }
     .contact { grid-template-columns: 1fr; gap: 20px; }
 
     .timeline li { grid-template-columns: 1fr; gap: 12px; }
+    .features { grid-template-columns: 1fr; }
     .timeline img { max-width: 320px; }
 
     .asso { grid-template-columns: 1fr; }
@@ -695,5 +764,7 @@ p { margin: 0 0 1em; }
     .link-list a { flex-direction: column; gap: 2px; }
     .link-list .desc { text-align: left; }
     .panel { padding: 24px; }
+    .project-card, .feature { padding: 22px; }
+    .section-head { flex-direction: column; align-items: start; }
     .footer-grid { grid-template-columns: 1fr; }
 }
