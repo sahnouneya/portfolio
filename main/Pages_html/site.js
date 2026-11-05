@@ -12,9 +12,7 @@
         { file: 'parcours.html', href: 'Parcours.html', label: 'Parcours Académique' },
         { file: 'comp.html', label: 'Compétences' },
         { file: 'vieasso.html', label: 'Vie associative' },
-        { file: 'passions.html', label: 'Passions' },
-        { file: 'stages.html', label: 'Stages' },
-        { file: 'quiz.html', label: 'Quiz' },
+        { file: 'stages.html', label: 'Expérience' },
         { file: 'cantact.html', label: 'Contact' }
     ];
 
@@ -22,7 +20,7 @@
         'acceuil.html': [
             'Bienvenue chez moi ! Clique sur moi quand tu veux, je te fais visiter ✨',
             'Je suis passionnée par l\'IA, l\'IoT et les systèmes embarqués 🤖',
-            'Aujourd\'hui je suis développeuse backend chez Lunar 🌙'
+            'Je développe des applications web et mobiles 💻'
         ],
         'parcours.html': [
             'Voici mon parcours : du Bac jusqu\'à l\'IIT 🎓',
@@ -36,17 +34,9 @@
             'La vie associative m\'a appris le leadership et le travail d\'équipe 🤝',
             'J\'ai été membre de l\'IEEE ENET\'Com SB ⚡'
         ],
-        'passions.html': [
-            'Cyclisme, nature, sport… ce qui me fait vibrer 🚴‍♀️',
-            'Le sport m\'aide à rester concentrée et motivée 💪'
-        ],
         'stages.html': [
             'Mes expériences pro : AR, IoT et Deep Learning 🚀',
             'Mon PFE chez TDS : une appli de réalité augmentée connectée à l\'IoT !'
-        ],
-        'quiz.html': [
-            'Teste tes connaissances en santé. Bonne chance ! 🧠',
-            'Choisis une réponse puis clique sur le bouton 😉'
         ],
         'cantact.html': [
             'Un projet, une question ? Écris-moi ✉️',
@@ -134,7 +124,7 @@
         if (reduceMotion || !('IntersectionObserver' in window)) return;
         const items = document.querySelectorAll(
             '.profil-container, .description, .photo-paragraphe, #comp, #comp > div > div, ' +
-            '.passion-item, .experience, .bro article, .quiz-container, section.contact, .footer-item'
+            '.experience, .bro article, section.contact, .footer-item'
         );
         const io = new IntersectionObserver(entries => {
             entries.forEach(e => {

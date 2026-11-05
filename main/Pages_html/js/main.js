@@ -67,7 +67,7 @@
             var message = form.message.value.trim();
             var subject = 'Message de ' + name + ' via le portfolio';
             var body = message + '\n\n' + name + ' — ' + email;
-            location.href = 'mailto:eyas92931@gmail.com?subject=' +
+            location.href = 'mailto:sahnouneya032@gmail.com?subject=' +
                 encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
     }
