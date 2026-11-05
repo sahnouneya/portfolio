@@ -2,21 +2,18 @@
 (function () {
     'use strict';
 
-    // Menu mobile
+    // Menu mobile (collapse Bootstrap) : on change seulement le texte du bouton
     var btn = document.querySelector('.menu-btn');
-    var nav = document.querySelector('.nav');
+    var nav = document.getElementById('nav');
     if (btn && nav) {
-        btn.addEventListener('click', function () {
-            var open = nav.classList.toggle('open');
-            btn.setAttribute('aria-expanded', open);
-            btn.textContent = open ? 'Fermer' : 'Menu';
-        });
+        nav.addEventListener('show.bs.collapse', function () { btn.textContent = 'Fermer'; });
+        nav.addEventListener('hide.bs.collapse', function () { btn.textContent = 'Menu'; });
     }
 
     // Lien de la page courante
     var page = decodeURIComponent(location.pathname.split('/').pop() || 'acceuil.html').toLowerCase();
     if (page === 'index.html' || page === '') page = 'acceuil.html';
-    document.querySelectorAll('.nav a').forEach(function (a) {
+    document.querySelectorAll('.navbar-nav a').forEach(function (a) {
         if (a.getAttribute('href').toLowerCase() === page) a.setAttribute('aria-current', 'page');
     });
 
@@ -71,63 +68,80 @@
                 encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
     }
-    // Captures d'écran des projets : on masque les emplacements sans image
-    // et on ouvre la capture en grand au clic.
+    // Captures d'écran des projets : on masque les emplacements sans image,
+    // puis un clic ouvre les captures dans un modal Bootstrap avec carrousel.
     var galleries = document.querySelectorAll('.shots');
-    if (galleries.length) {
-        var box = document.createElement('dialog');
-        box.className = 'lightbox';
-        box.innerHTML = '<img alt=""><div class="lightbox-bar">' +
-            '<button type="button" data-step="-1">Précédente</button>' +
-            '<button type="button" data-close>Fermer</button>' +
-            '<button type="button" data-step="1">Suivante</button></div>';
-        document.body.appendChild(box);
-        var bigImg = box.querySelector('img');
-        var list = [], index = 0;
+    var modalEl = null;
 
-        function show(i) {
-            index = (i + list.length) % list.length;
-            bigImg.src = list[index].href;
-            bigImg.alt = list[index].querySelector('img').alt;
-        }
-
-        box.addEventListener('click', function (e) {
-            if (e.target === box || e.target.hasAttribute('data-close')) box.close();
-            else if (e.target.hasAttribute('data-step')) show(index + Number(e.target.getAttribute('data-step')));
-        });
-        box.addEventListener('keydown', function (e) {
-            if (e.key === 'ArrowRight') show(index + 1);
-            if (e.key === 'ArrowLeft') show(index - 1);
-        });
-
-        galleries.forEach(function (gallery) {
-            function refresh() {
-                var visible = gallery.querySelectorAll('li:not([hidden])').length;
-                var note = gallery.nextElementSibling;
-                var hasNote = note && note.classList.contains('shots-empty');
-                if (!visible && !hasNote) {
-                    note = document.createElement('p');
-                    note.className = 'shots-empty';
-                    note.textContent = "Captures d'écran bientôt disponibles";
-                    gallery.after(note);
-                } else if (visible && hasNote) {
-                    note.remove();
-                }
-                gallery.hidden = !visible;
-            }
-            gallery.querySelectorAll('img').forEach(function (img) {
-                function hide() { img.closest('li').hidden = true; refresh(); }
-                img.addEventListener('error', hide);
-                if (img.complete && !img.naturalWidth) hide();
-            });
-            gallery.addEventListener('click', function (e) {
-                var link = e.target.closest('a');
-                if (!link || typeof box.showModal !== 'function') return;
-                e.preventDefault();
-                list = Array.prototype.slice.call(gallery.querySelectorAll('li:not([hidden]) a'));
-                box.showModal();
-                show(list.indexOf(link));
-            });
-        });
+    function buildModal() {
+        var holder = document.createElement('div');
+        holder.innerHTML =
+            '<div class="modal fade shot-modal" id="shot-modal" tabindex="-1" aria-labelledby="shot-modal-title" aria-hidden="true">' +
+            '<div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content">' +
+            '<div class="modal-header"><h2 class="modal-title" id="shot-modal-title"></h2>' +
+            '<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button></div>' +
+            '<div id="shot-carousel" class="carousel slide"><div class="carousel-inner"></div>' +
+            '<button class="carousel-control-prev" type="button" data-bs-target="#shot-carousel" data-bs-slide="prev">' +
+            '<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Précédente</span></button>' +
+            '<button class="carousel-control-next" type="button" data-bs-target="#shot-carousel" data-bs-slide="next">' +
+            '<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Suivante</span></button>' +
+            '</div></div></div></div>';
+        modalEl = holder.firstChild;
+        document.body.appendChild(modalEl);
     }
+
+    function openShots(gallery, link) {
+        if (!modalEl) buildModal();
+        var links = Array.prototype.slice.call(gallery.querySelectorAll('li:not([hidden]) a'));
+        var start = Math.max(0, links.indexOf(link));
+        var carouselEl = modalEl.querySelector('.carousel');
+        var inner = carouselEl.querySelector('.carousel-inner');
+        inner.innerHTML = '';
+        links.forEach(function (l, i) {
+            var item = document.createElement('div');
+            item.className = 'carousel-item' + (i === start ? ' active' : '');
+            var img = document.createElement('img');
+            img.src = l.href;
+            img.alt = l.querySelector('img').alt;
+            item.appendChild(img);
+            inner.appendChild(item);
+        });
+        carouselEl.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(function (c) {
+            c.hidden = links.length < 2;
+        });
+        modalEl.querySelector('.modal-title').textContent = gallery.getAttribute('aria-label') || '';
+        var old = bootstrap.Carousel.getInstance(carouselEl);
+        if (old) old.dispose();
+        bootstrap.Carousel.getOrCreateInstance(carouselEl, { interval: false, ride: false, keyboard: true });
+        bootstrap.Modal.getOrCreateInstance(modalEl).show();
+    }
+
+    galleries.forEach(function (gallery) {
+        function refresh() {
+            var visible = gallery.querySelectorAll('li:not([hidden])').length;
+            var note = gallery.nextElementSibling;
+            var hasNote = note && note.classList.contains('shots-empty');
+            if (!visible && !hasNote) {
+                note = document.createElement('p');
+                note.className = 'shots-empty';
+                note.textContent = "Captures d'écran bientôt disponibles";
+                gallery.after(note);
+            } else if (visible && hasNote) {
+                note.remove();
+            }
+            gallery.hidden = !visible;
+        }
+        gallery.querySelectorAll('img').forEach(function (img) {
+            function hide() { img.closest('li').hidden = true; refresh(); }
+            img.addEventListener('error', hide);
+            if (img.complete && !img.naturalWidth) hide();
+        });
+        gallery.addEventListener('click', function (e) {
+            var link = e.target.closest('a');
+            // Sans Bootstrap, le lien ouvre simplement l'image.
+            if (!link || !window.bootstrap) return;
+            e.preventDefault();
+            openShots(gallery, link);
+        });
+    });
 })();

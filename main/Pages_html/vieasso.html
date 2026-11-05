@@ -1,87 +1,111 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vie associative — Eya Sahnoun</title>
-    <meta name="description" content="Engagement associatif d'Eya Sahnoun.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <header class="site-header">
-        <div class="wrap">
-            <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
-            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-            <nav class="nav" id="nav" aria-label="Navigation principale">
-                <a href="acceuil.html">Accueil</a>
-                <a href="realisations.html">Réalisations</a>
-                <a href="stages.html">Expérience</a>
-                <a href="comp.html">Compétences</a>
-                <a href="Parcours.html">Parcours</a>
-                <a href="vieasso.html">Vie associative</a>
-                <a href="cantact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+<!doctype html>
 
-    <main>
-        <section class="page-head">
-            <div class="wrap">
-                <span class="eyebrow">Engagement</span>
-                <h1>Vie associative</h1>
-                <p>Clubs, formations et événements auxquels j'ai participé.</p>
-            </div>
-        </section>
-        <section class="section">
-            <div class="wrap asso">
-                <div class="panel reveal">
-                    <h2>Club</h2>
-                    <div class="club">
-                        <img src="Images/images.png" alt="Logo IEEE" loading="lazy">
-                        <div>
-                            <strong>IEEE ENET'Com Student Branch</strong>
-                            <span>Membre</span>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Vie associative — Eya Sahnoun</title>
+        <meta content="Engagement associatif d'Eya Sahnoun." name="description" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
+        <script defer src="js/bootstrap.bundle.min.js"></script>
+        <script defer src="js/main.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <nav aria-label="Navigation principale" class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+                    <button
+                        aria-controls="nav"
+                        aria-expanded="false"
+                        aria-label="Afficher le menu"
+                        class="navbar-toggler menu-btn"
+                        data-bs-target="#nav"
+                        data-bs-toggle="collapse"
+                        type="button"
+                    >
+                        Menu
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" href="acceuil.html">Accueil</a>
+                            <a class="nav-link" href="realisations.html">Réalisations</a>
+                            <a class="nav-link" href="stages.html">Expérience</a>
+                            <a class="nav-link" href="comp.html">Compétences</a>
+                            <a class="nav-link" href="Parcours.html">Parcours</a>
+                            <a class="nav-link" href="vieasso.html">Vie associative</a>
+                            <a class="nav-link" href="cantact.html">Contact</a>
                         </div>
                     </div>
                 </div>
-                <div class="panel reveal">
-                    <h2>Formations et événements</h2>
-                    <ul>
-                        <li>Formation en robotique à l'ENET'Com</li>
-                        <li>Participation à l'IEEEXtreme 2022/2023</li>
-                        <li>Organisation de l'événement i4S de l'IEEE</li>
-                    </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="page-head">
+                <div class="container">
+                    <span class="eyebrow">Engagement</span>
+                    <h1>Vie associative</h1>
+                    <p>Clubs, formations et événements auxquels j'ai participé.</p>
                 </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="panel reveal h-100">
+                                <h2>Club</h2>
+                                <div class="club d-flex align-items-center gap-3">
+                                    <img alt="Logo IEEE" loading="lazy" src="Images/images.png" />
+                                    <div>
+                                        <strong>IEEE ENET'Com Student Branch</strong>
+                                        <span>Membre</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel reveal h-100">
+                                <h2>Formations et événements</h2>
+                                <ul>
+                                    <li>Formation en robotique à l'ENET'Com</li>
+                                    <li>Participation à l'IEEEXtreme 2022/2023</li>
+                                    <li>Organisation de l'événement i4S de l'IEEE</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+                        <p class="mt-2">Développeuse full-stack web &amp; mobile, Sfax.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h4>Email</h4>
+                        <a href="mailto:sahnouneya032@gmail.com">sahnouneya032@gmail.com</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-2">
+                        <h4>Téléphone</h4>
+                        <a href="tel:+21651043305">+216 51 043 305</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h4>Adresse</h4>
+                        <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                    </div>
+                </div>
+                <p class="footer-bottom">© <span data-year>2026</span> Eya Sahnoun</p>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="wrap">
-            <div class="footer-grid">
-                <div>
-                    <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
-                    <p style="margin-top:10px">Développeuse full-stack web &amp; mobile, Sfax.</p>
-                </div>
-                <div>
-                    <h4>Email</h4>
-                    <a href="mailto:sahnouneya032@gmail.com">sahnouneya032@gmail.com</a>
-                </div>
-                <div>
-                    <h4>Téléphone</h4>
-                    <a href="tel:+21651043305">51 043 305</a>
-                </div>
-                <div>
-                    <h4>Adresse</h4>
-                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
-                </div>
-            </div>
-            <p class="footer-bottom">&copy; <span data-year>2026</span> Eya Sahnoun</p>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>

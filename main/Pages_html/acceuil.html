@@ -1,155 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eya Sahnoun — Portfolio</title>
-    <meta name="description" content="Portfolio d'Eya Sahnoun, élève ingénieure en génie informatique à l'IIT.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <header class="site-header">
-        <div class="wrap">
-            <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
-            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-            <nav class="nav" id="nav" aria-label="Navigation principale">
-                <a href="acceuil.html">Accueil</a>
-                <a href="realisations.html">Réalisations</a>
-                <a href="stages.html">Expérience</a>
-                <a href="comp.html">Compétences</a>
-                <a href="Parcours.html">Parcours</a>
-                <a href="vieasso.html">Vie associative</a>
-                <a href="cantact.html">Contact</a>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Eya Sahnoun — Portfolio</title>
+        <meta content="Portfolio d'Eya Sahnoun, élève ingénieure en génie informatique à l'IIT." name="description" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
+        <script defer src="js/bootstrap.bundle.min.js"></script>
+        <script defer src="js/main.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <nav aria-label="Navigation principale" class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+                    <button
+                        aria-controls="nav"
+                        aria-expanded="false"
+                        aria-label="Afficher le menu"
+                        class="navbar-toggler menu-btn"
+                        data-bs-target="#nav"
+                        data-bs-toggle="collapse"
+                        type="button"
+                    >
+                        Menu
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" href="acceuil.html">Accueil</a>
+                            <a class="nav-link" href="realisations.html">Réalisations</a>
+                            <a class="nav-link" href="stages.html">Expérience</a>
+                            <a class="nav-link" href="comp.html">Compétences</a>
+                            <a class="nav-link" href="Parcours.html">Parcours</a>
+                            <a class="nav-link" href="vieasso.html">Vie associative</a>
+                            <a class="nav-link" href="cantact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
             </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="wrap hero">
-            <div>
-                <span class="eyebrow">Portfolio</span>
-                <h1>Bonjour, je suis Eya.<br>Je développe des applications <em>web</em> et <em>mobiles</em>.</h1>
-                <p class="lead">
-                    Développeuse full-stack web et mobile, forte de deux ans d'expérience en production :
-                    ERP/CRM B2B chez ICT, APIs et dashboards chez Lunar TC. À l'aise sur PHP, Java, .NET,
-                    Angular et Flutter.
-                </p>
-                <div class="actions">
-                    <a class="btn btn-primary" href="realisations.html">Voir mes projets</a>
-                    <a class="btn btn-ghost" href="cantact.html">Me contacter</a>
+        </header>
+        <main>
+            <section class="container hero">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-lg-7">
+                        <span class="eyebrow">Portfolio</span>
+                        <h1>
+                            Bonjour, je suis Eya.<br />Je développe des applications <em>web</em> et <em>mobiles</em>.
+                        </h1>
+                        <p class="lead">
+                            Développeuse full-stack web et mobile, forte de deux ans d'expérience en production :
+                            ERP/CRM B2B chez ICT, APIs et dashboards chez Lunar TC. À l'aise sur PHP, Java, .NET,
+                            Angular et Flutter.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a class="btn btn-primary" href="realisations.html">Voir mes projets</a>
+                            <a class="btn btn-ghost" href="cantact.html">Me contacter</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="hero-photo">
+                            <img
+                                alt="Avatar d'Eya Sahnoun"
+                                class="avatar"
+                                height="1280"
+                                src="Images/avatar.jpg"
+                                width="720"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="facts reveal row g-0">
+                    <div class="fact col-md-4"><strong>ICT</strong><span>Full-stack ERP / CRM, 2025–2026</span></div>
+                    <div class="fact col-md-4">
+                        <strong>Lunar TC</strong><span>Back-end Spring Boot, 2024–2025</span>
+                    </div>
+                    <div class="fact col-md-4"><strong>IIT Sfax</strong><span>Ingénieur en génie logiciel</span></div>
                 </div>
             </div>
-            <div class="hero-photo">
-                <img class="avatar" src="Images/avatar.jpg" alt="Avatar d'Eya Sahnoun" width="720" height="1280">
+            <section class="section">
+                <div class="container reveal">
+                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                        <h2 class="section-title">Projets phares</h2>
+                        <a class="btn btn-ghost" href="realisations.html">Toutes les réalisations</a>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <a class="feature card h-100" href="realisations.html#sahtek">
+                                <span class="feature-kind">Mobile · 2026</span>
+                                <h3>Sahtek</h3>
+                                <p>
+                                    Application Flutter de suivi de la glycémie, avec échange direct entre le patient et
+                                    son médecin.
+                                </p>
+                                <ul class="tags list-unstyled d-flex flex-wrap gap-2">
+                                    <li class="badge rounded-pill">Flutter</li>
+                                    <li class="badge rounded-pill">Firebase</li>
+                                    <li class="badge rounded-pill">Spring Boot</li>
+                                </ul>
+                                <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="feature card h-100" href="realisations.html#voitures">
+                                <span class="feature-kind">Web · Laravel</span>
+                                <h3>Plateforme automobile</h3>
+                                <p>Vente de voitures neuves et d'occasion, avec gestion des rôles utilisateurs.</p>
+                                <ul class="tags list-unstyled d-flex flex-wrap gap-2">
+                                    <li class="badge rounded-pill">Laravel</li>
+                                    <li class="badge rounded-pill">PHP</li>
+                                    <li class="badge rounded-pill">MySQL</li>
+                                </ul>
+                                <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="feature card h-100" href="realisations.html#entrepot">
+                                <span class="feature-kind">Data · 2025</span>
+                                <h3>Entrepôt de données</h3>
+                                <p>
+                                    Schéma en étoile alimenté par SSIS, KPI exposés par une API ASP.NET et affichés dans
+                                    Angular.
+                                </p>
+                                <ul class="tags list-unstyled d-flex flex-wrap gap-2">
+                                    <li class="badge rounded-pill">SSIS</li>
+                                    <li class="badge rounded-pill">ASP.NET</li>
+                                    <li class="badge rounded-pill">Angular</li>
+                                </ul>
+                                <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="feature card h-100" href="realisations.html#ecg">
+                                <span class="feature-kind">Deep learning · 2025</span>
+                                <h3>Classification d'ECG</h3>
+                                <p>
+                                    Classification multi-label d'ECG 12 dérivations (PTB-XL) par un ensemble de CNN 1D.
+                                </p>
+                                <ul class="tags list-unstyled d-flex flex-wrap gap-2">
+                                    <li class="badge rounded-pill">Python</li>
+                                    <li class="badge rounded-pill">TensorFlow</li>
+                                    <li class="badge rounded-pill">PyTorch</li>
+                                </ul>
+                                <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container two-col reveal">
+                    <div class="row g-4">
+                        <div class="col-lg-3"><h2 class="section-title">À propos</h2></div>
+                        <div class="col-lg-9">
+                            <div>
+                                <p>
+                                    Chez ICT, j'ai conçu et fait évoluer les modules métier d'un ERP/CRM B2B en
+                                    production : facturation, avoirs, reçus de paiement, caisse, ainsi que la gestion
+                                    des rôles et des permissions. Avant cela, chez Lunar TC, j'ai développé des APIs
+                                    REST sécurisées en Spring Boot et une application de dashboarding connectée à
+                                    plusieurs bases MongoDB.
+                                </p>
+                                <p>
+                                    Je prépare aujourd'hui le diplôme d'ingénieur en génie logiciel à l'IIT de Sfax. Je
+                                    m'intéresse aussi à l'IA appliquée, du deep learning sur signaux médicaux aux outils
+                                    comme Claude Code ou GitHub Copilot.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container two-col reveal">
+                    <div class="row g-4">
+                        <div class="col-lg-3"><h2 class="section-title">Explorer</h2></div>
+                        <div class="col-lg-9">
+                            <ul class="link-list list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="realisations.html"
+                                        ><span class="title">Réalisations</span
+                                        ><span class="desc">Flutter, Laravel, data, deep learning</span></a
+                                    >
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="stages.html"
+                                        ><span class="title">Expérience</span
+                                        ><span class="desc">ICT, Lunar TC, stages</span></a
+                                    >
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="comp.html"
+                                        ><span class="title">Compétences</span
+                                        ><span class="desc">Web, mobile, back-end, IA</span></a
+                                    >
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="Parcours.html"
+                                        ><span class="title">Parcours académique</span
+                                        ><span class="desc">Du bac à l'IIT</span></a
+                                    >
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="vieasso.html"
+                                        ><span class="title">Vie associative</span
+                                        ><span class="desc">IEEE ENET'Com SB</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
+                        <p class="mt-2">Développeuse full-stack web &amp; mobile, Sfax.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h4>Email</h4>
+                        <a href="mailto:sahnouneya032@gmail.com">sahnouneya032@gmail.com</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-2">
+                        <h4>Téléphone</h4>
+                        <a href="tel:+21651043305">+216 51 043 305</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h4>Adresse</h4>
+                        <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
+                    </div>
+                </div>
+                <p class="footer-bottom">© <span data-year>2026</span> Eya Sahnoun</p>
             </div>
-        </section>
-
-        <div class="wrap">
-            <div class="facts reveal">
-                <div class="fact"><strong>ICT</strong><span>Full-stack ERP / CRM, 2025–2026</span></div>
-                <div class="fact"><strong>Lunar TC</strong><span>Back-end Spring Boot, 2024–2025</span></div>
-                <div class="fact"><strong>IIT Sfax</strong><span>Ingénieur en génie logiciel</span></div>
-            </div>
-        </div>
-
-        <section class="section">
-            <div class="wrap reveal">
-                <div class="section-head">
-                    <h2 class="section-title">Projets phares</h2>
-                    <a class="btn btn-ghost" href="realisations.html">Toutes les réalisations</a>
-                </div>
-                <div class="features">
-                <a class="feature" href="realisations.html#sahtek">
-                    <span class="feature-kind">Mobile · 2026</span>
-                    <h3>Sahtek</h3>
-                    <p>Application Flutter de suivi de la glycémie, avec échange direct entre le patient et son médecin.</p>
-                    <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Spring Boot</li></ul>
-                    <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
-                </a>
-                <a class="feature" href="realisations.html#voitures">
-                    <span class="feature-kind">Web · Laravel</span>
-                    <h3>Plateforme automobile</h3>
-                    <p>Vente de voitures neuves et d'occasion, avec gestion des rôles utilisateurs.</p>
-                    <ul class="tags"><li>Laravel</li><li>PHP</li><li>MySQL</li></ul>
-                    <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
-                </a>
-                <a class="feature" href="realisations.html#entrepot">
-                    <span class="feature-kind">Data · 2025</span>
-                    <h3>Entrepôt de données</h3>
-                    <p>Schéma en étoile alimenté par SSIS, KPI exposés par une API ASP.NET et affichés dans Angular.</p>
-                    <ul class="tags"><li>SSIS</li><li>ASP.NET</li><li>Angular</li></ul>
-                    <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
-                </a>
-                <a class="feature" href="realisations.html#ecg">
-                    <span class="feature-kind">Deep learning · 2025</span>
-                    <h3>Classification d'ECG</h3>
-                    <p>Classification multi-label d'ECG 12 dérivations (PTB-XL) par un ensemble de CNN 1D.</p>
-                    <ul class="tags"><li>Python</li><li>TensorFlow</li><li>PyTorch</li></ul>
-                    <span class="feature-more">Voir le projet <span aria-hidden="true">→</span></span>
-                </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="wrap two-col reveal">
-                <h2 class="section-title">À propos</h2>
-                <div>
-                    <p>
-                        Chez ICT, j'ai conçu et fait évoluer les modules métier d'un ERP/CRM B2B en production :
-                        facturation, avoirs, reçus de paiement, caisse, ainsi que la gestion des rôles et des permissions.
-                        Avant cela, chez Lunar TC, j'ai développé des APIs REST sécurisées en Spring Boot et une
-                        application de dashboarding connectée à plusieurs bases MongoDB.
-                    </p>
-                    <p>
-                        Je prépare aujourd'hui le diplôme d'ingénieur en génie logiciel à l'IIT de Sfax.
-                        Je m'intéresse aussi à l'IA appliquée, du deep learning sur signaux médicaux
-                        aux outils comme Claude Code ou GitHub Copilot.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="wrap two-col reveal">
-                <h2 class="section-title">Explorer</h2>
-                <ul class="link-list">
-                    <li><a href="realisations.html"><span class="title">Réalisations</span><span class="desc">Flutter, Laravel, data, deep learning</span></a></li>
-                    <li><a href="stages.html"><span class="title">Expérience</span><span class="desc">ICT, Lunar TC, stages</span></a></li>
-                    <li><a href="comp.html"><span class="title">Compétences</span><span class="desc">Web, mobile, back-end, IA</span></a></li>
-                    <li><a href="Parcours.html"><span class="title">Parcours académique</span><span class="desc">Du bac à l'IIT</span></a></li>
-                    <li><a href="vieasso.html"><span class="title">Vie associative</span><span class="desc">IEEE ENET'Com SB</span></a></li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="wrap">
-            <div class="footer-grid">
-                <div>
-                    <a class="brand" href="acceuil.html">Eya Sahnoun<span>.</span></a>
-                    <p style="margin-top:10px">Développeuse full-stack web &amp; mobile, Sfax.</p>
-                </div>
-                <div>
-                    <h4>Email</h4>
-                    <a href="mailto:sahnouneya032@gmail.com">sahnouneya032@gmail.com</a>
-                </div>
-                <div>
-                    <h4>Téléphone</h4>
-                    <a href="tel:+21651043305">51 043 305</a>
-                </div>
-                <div>
-                    <h4>Adresse</h4>
-                    <p>Rue Imam Sahnoun, Gremda, km 7, Sfax</p>
-                </div>
-            </div>
-            <p class="footer-bottom">&copy; <span data-year>2026</span> Eya Sahnoun</p>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
