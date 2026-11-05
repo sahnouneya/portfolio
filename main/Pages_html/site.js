@@ -20,7 +20,7 @@
         'acceuil.html': [
             'Bienvenue chez moi ! Clique sur moi quand tu veux, je te fais visiter ✨',
             'Je suis passionnée par l\'IA, l\'IoT et les systèmes embarqués 🤖',
-            'Je développe des applications web et mobiles 💻'
+            'Développeuse web et mobile 💻'
         ],
         'parcours.html': [
             'Voici mon parcours : du Bac jusqu\'à l\'IIT 🎓',
