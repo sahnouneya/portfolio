@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/": {},
+    "/competences": {},
+    "/contact": {},
+    "/experience": {},
+    "/parcours": {},
+    "/projets": {}
+  }
+}
