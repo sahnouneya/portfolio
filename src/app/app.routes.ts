@@ -1,36 +1,36 @@
 import { Routes } from '@angular/router';
 
-const suffix = ' — Eya Sahnoun';
+const prefix = 'Eya Sahnoun · ';
 
 export const routes: Routes = [
   {
     path: '',
-    title: 'Eya Sahnoun — Développeuse Full-Stack Web & Mobile',
+    title: prefix + 'Web, Mobile, IA & DevOps',
     loadComponent: () => import('./pages/home').then((m) => m.Home),
   },
   {
     path: 'projets',
-    title: 'Projets' + suffix,
+    title: prefix + 'Projets',
     loadComponent: () => import('./pages/projects').then((m) => m.Projects),
   },
   {
     path: 'experience',
-    title: 'Expérience' + suffix,
+    title: prefix + 'Expérience',
     loadComponent: () => import('./pages/experience').then((m) => m.Experience),
   },
   {
     path: 'competences',
-    title: 'Compétences' + suffix,
+    title: prefix + 'Compétences',
     loadComponent: () => import('./pages/skills').then((m) => m.Skills),
   },
   {
     path: 'parcours',
-    title: 'Parcours' + suffix,
+    title: prefix + 'Parcours',
     loadComponent: () => import('./pages/journey').then((m) => m.Journey),
   },
   {
     path: 'contact',
-    title: 'Contact' + suffix,
+    title: prefix + 'Contact',
     loadComponent: () => import('./pages/contact').then((m) => m.Contact),
   },
   { path: '**', redirectTo: '' },
