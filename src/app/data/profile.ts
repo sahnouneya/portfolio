@@ -2,7 +2,7 @@
 
 export const contact = {
   name: 'Eya Sahnoun',
-  title: 'Développeuse Full-Stack Web & Mobile',
+  title: 'Développeuse Web, Mobile, IA & DevOps',
   city: 'Sfax, Tunisie',
   address: 'Rue Imam Sahnoun, Gremda, km 7, Sfax',
   email: 'sahnouneya032@gmail.com',
@@ -13,8 +13,64 @@ export const contact = {
 };
 
 export const profile =
-  'Développeuse full-stack web et mobile, forte de deux ans d’expérience en production : ERP/CRM B2B chez ICT, ' +
+  'Développeuse web, mobile, IA et DevOps, forte de deux ans d’expérience en production : ERP/CRM B2B chez ICT, ' +
   'APIs et dashboards chez Lunar TC. À l’aise sur PHP, Java, .NET, Angular et Flutter ; projets en DevOps et en IA agentique.';
+
+/** Rôles qui défilent dans le titre de l'accueil. */
+export const roles = ['Développeuse Web', 'Développeuse Mobile', 'Ingénieure IA', 'IA agentique', 'DevOps'];
+
+export interface Domain {
+  name: string;
+  color: string;
+  icon: 'web' | 'mobile' | 'ia' | 'agent' | 'devops';
+  text: string;
+  tags: string[];
+}
+
+export const domains: Domain[] = [
+  {
+    name: 'Web',
+    color: 'var(--c-web)',
+    icon: 'web',
+    text: 'Applications full-stack, ERP/CRM et APIs REST sécurisées.',
+    tags: ['Angular', 'Spring Boot', 'Laravel', 'ASP.NET'],
+  },
+  {
+    name: 'Mobile',
+    color: 'var(--c-mobile)',
+    icon: 'mobile',
+    text: 'Applications Android et iOS connectées au temps réel.',
+    tags: ['Flutter', 'Dart', 'Firebase'],
+  },
+  {
+    name: 'IA',
+    color: 'var(--c-ia)',
+    icon: 'ia',
+    text: 'Deep learning : prédiction, classification de signaux.',
+    tags: ['TensorFlow', 'PyTorch', 'LSTM', 'CNN'],
+  },
+  {
+    name: 'IA agentique',
+    color: 'var(--c-agent)',
+    icon: 'agent',
+    text: 'Agents LLM qui raisonnent, utilisent des outils et citent leurs sources.',
+    tags: ['LangGraph', 'RAG', 'LLM', 'pgvector'],
+  },
+  {
+    name: 'DevOps',
+    color: 'var(--c-devops)',
+    icon: 'devops',
+    text: 'Conteneurs, CI/CD, déploiement cloud et supervision.',
+    tags: ['Docker', 'GitHub Actions', 'Azure', 'Grafana'],
+  },
+];
+
+/** Technologies du bandeau défilant. */
+export const techs = [
+  'Angular', 'TypeScript', 'Flutter', 'Spring Boot', 'PHP / Laminas', 'Laravel', 'ASP.NET', 'FastAPI', 'Python',
+  'LangGraph', 'LangChain', 'RAG', 'TensorFlow', 'PyTorch', 'Docker', 'GitHub Actions', 'Azure', 'Prometheus',
+  'Grafana', 'PostgreSQL', 'MongoDB', 'Firebase', 'Claude Code',
+];
 
 export type Category = 'Mobile' | 'Web' | 'DevOps' | 'IA' | 'Data';
 

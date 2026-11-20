@@ -113,8 +113,7 @@ export class App {
 
     // Après l'hydratation, pour que le rendu serveur et le rendu navigateur restent identiques.
     afterNextRender(() => {
-      const set = this.doc.documentElement.dataset['theme'];
-      this.dark.set(set ? set === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+      this.dark.set(this.doc.documentElement.dataset['theme'] === 'dark');
     });
   }
 
@@ -123,7 +122,7 @@ export class App {
     this.dark.set(next === 'dark');
     this.doc.documentElement.dataset['theme'] = next;
     try {
-      localStorage.setItem('theme', next);
+      localStorage.setItem('theme-v2', next);
     } catch {
       /* stockage indisponible : le choix vaut pour la visite en cours */
     }
