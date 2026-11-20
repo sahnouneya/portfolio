@@ -1,41 +1,59 @@
 import { Component, ElementRef, computed, signal, viewChild } from '@angular/core';
 
+import { RouterLink } from '@angular/router';
+
 import { Category, Project, projects } from '../data/profile';
 import { Reveal } from '../shared/reveal.directive';
 
 @Component({
   selector: 'app-projects',
-  imports: [Reveal],
+  imports: [Reveal, RouterLink],
   template: `
     <section class="page-head">
       <div class="container">
-        <p class="kicker">Projets</p>
-        <h1>Réalisations</h1>
-        <p class="lead">
-          Des applications web et mobiles aux chaînes CI/CD et aux projets d'IA : une sélection de ce que j'ai conçu et
-          développé.
-        </p>
-        <div class="filters" role="group" aria-label="Filtrer les projets">
-          @for (f of filters; track f) {
-            <button type="button" class="chip" [class.is-active]="active() === f" [attr.aria-pressed]="active() === f" (click)="active.set(f)">
-              {{ f }}
-            </button>
-          }
+        <div class="page-head-row">
+          <div>
+            <p class="kicker">Index des travaux · 2024–2026</p>
+            <h1>Réalisations</h1>
+            <p class="lead">
+              Des applications web et mobiles aux chaînes CI/CD et aux projets d'IA : une sélection de ce que j'ai conçu,
+              développé et déployé.
+            </p>
+          </div>
+          <div class="head-stat">
+            <span class="label">Archives actives</span>
+            <strong>{{ pad(all.length) }} <small>/ projets</small></strong>
+            <p>Web · Mobile · IA · DevOps</p>
+          </div>
+        </div>
+        <div class="filters">
+          <div class="filters-list" role="group" aria-label="Filtrer les projets">
+            @for (f of filters; track f) {
+              <button type="button" class="chip" [class.is-active]="active() === f" [attr.aria-pressed]="active() === f" (click)="active.set(f)">
+                {{ f }} <small>({{ count(f) }})</small>
+              </button>
+            }
+          </div>
+          <span class="label">Tri par année</span>
         </div>
       </div>
     </section>
 
     <section class="section section-tight">
-      <div class="container">
-        @for (p of visible(); track p.id; let i = $index) {
+      <div class="container project-list">
+        @for (p of visible(); track p.id) {
           <article class="project" [id]="p.id" appReveal>
             <div class="project-side">
               <span class="project-num">{{ number(p) }}</span>
-              <span class="card-meta">{{ p.year }}</span>
-              <span class="muted">{{ p.kind }}</span>
+              <span class="project-year">{{ p.year }}</span>
+              <span class="project-kind">{{ p.kind }}</span>
+              <span class="project-slug">{{ p.categories.join(' / ').toLowerCase() }}/{{ p.id }}</span>
             </div>
             <div class="project-body">
-              <h2>{{ p.title }}</h2>
+              <div class="project-title">
+                <h2>{{ p.title }}</h2>
+                <span class="label">{{ p.tagline }}</span>
+              </div>
               <ul class="points">
                 @for (pt of p.points; track pt) {
                   <li>{{ pt }}</li>
@@ -65,6 +83,20 @@ import { Reveal } from '../shared/reveal.directive';
       </div>
     </section>
 
+    <section class="container">
+      <div class="cta" appReveal>
+        <div>
+          <p class="kicker">Méthode</p>
+          <h2>Chaque projet, du prototype à la production</h2>
+          <p>
+            Conception soignée, code testé et structuré, puis conteneurisation, intégration continue et supervision : je
+            livre des applications prêtes à être utilisées.
+          </p>
+        </div>
+        <a class="btn btn-primary" routerLink="/contact">Démarrer un projet <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
     <dialog #viewer class="viewer" (close)="current.set(null)" (click)="onBackdrop($event)">
       @if (current(); as cur) {
         <div class="viewer-head">
@@ -87,6 +119,10 @@ import { Reveal } from '../shared/reveal.directive';
 })
 export class Projects {
   protected readonly filters: ('Tous' | Category)[] = ['Tous', 'Web', 'Mobile', 'DevOps', 'IA', 'Data'];
+  protected readonly all = projects;
+  protected readonly pad = (n: number) => String(n).padStart(2, '0');
+  protected readonly count = (f: 'Tous' | Category) =>
+    f === 'Tous' ? projects.length : projects.filter((p) => p.categories.includes(f)).length;
   protected readonly active = signal<'Tous' | Category>('Tous');
   protected readonly visible = computed(() => {
     const f = this.active();

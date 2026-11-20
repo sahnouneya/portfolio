@@ -16,6 +16,7 @@ import { contact } from './data/profile';
           <span class="brand-mark" aria-hidden="true">ES</span>
           <span>Eya Sahnoun</span>
         </a>
+        <span class="label brand-tag">Web · Mobile · IA · DevOps</span>
 
         <nav class="nav" [class.is-open]="menuOpen()" id="menu" aria-label="Navigation principale">
           @for (link of links; track link.path) {
@@ -69,23 +70,34 @@ import { contact } from './data/profile';
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <a class="brand" routerLink="/"><span class="brand-mark" aria-hidden="true">ES</span><span>Eya Sahnoun</span></a>
-          <p class="muted">{{ c.title }}, {{ c.city }}.</p>
+          <p class="footer-name"><span>[ES]</span>Eya Sahnoun</p>
+          <p class="muted">
+            Développeuse web et mobile, ingénieure logiciel en formation : applications full-stack, IA agentique et
+            chaînes DevOps.
+          </p>
+          <p class="label">{{ c.city }} · Disponible</p>
         </div>
+        <nav aria-label="Plan du site">
+          <h2 class="footer-title">Navigation</h2>
+          <ol class="footer-index">
+            @for (link of links; track link.path) {
+              <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+            }
+          </ol>
+        </nav>
         <div>
           <h2 class="footer-title">Contact</h2>
-          <a [href]="'mailto:' + c.email">{{ c.email }}</a><br />
-          <a [href]="c.phoneHref">{{ c.phone }}</a>
-        </div>
-        <div>
-          <h2 class="footer-title">Réseaux</h2>
-          <a [href]="c.linkedin" target="_blank" rel="noopener">LinkedIn</a><br />
-          <a [href]="c.github" target="_blank" rel="noopener">GitHub</a>
+          <div class="footer-channels">
+            <div><span class="label">Email</span><a [href]="'mailto:' + c.email">{{ c.email }}</a></div>
+            <div><span class="label">Téléphone</span><a [href]="c.phoneHref">{{ c.phone }}</a></div>
+            <div><span class="label">Code</span><a [href]="c.github" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div><span class="label">Réseau</span><a [href]="c.linkedin" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+          </div>
         </div>
       </div>
-      <div class="container footer-bottom">
+      <div class="container footer-bottom label">
         <span>© {{ year }} Eya Sahnoun</span>
-        <span class="muted">Construit avec Angular</span>
+        <span>Construit avec Angular · Sfax</span>
       </div>
     </footer>
   `,

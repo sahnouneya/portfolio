@@ -9,37 +9,27 @@ import { Reveal } from '../shared/reveal.directive';
   imports: [RouterLink, Reveal],
   template: `
     <section class="hero">
-      <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container hero-grid">
         <div class="hero-text">
           <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Disponible · {{ c.city }}</p>
           <h1>
-            Bonjour, je suis <span class="accent-text">Eya</span>.
-            <span class="roles" aria-hidden="true"><span class="typed">{{ typed() }}</span><span class="caret"></span></span>
+            Bonjour, je suis Eya.
+            <span class="roles" aria-hidden="true">{{ typed() }}<span class="caret"></span></span>
             <span class="sr-only">Développeuse web, mobile, IA, IA agentique et DevOps.</span>
           </h1>
           <p class="lead">{{ profile }}</p>
-          <ul class="role-pills" aria-label="Domaines">
-            @for (d of domains; track d.name) {
-              <li [style.--c]="d.color">{{ d.name }}</li>
-            }
-          </ul>
           <div class="actions">
-            <a class="btn btn-primary" routerLink="/projets">Voir mes projets</a>
+            <a class="btn btn-primary" routerLink="/projets">Voir mes projets <span aria-hidden="true">→</span></a>
             <a class="btn btn-ghost" routerLink="/contact">Me contacter</a>
           </div>
           <ul class="social">
-            <li><a [href]="c.github" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a [href]="c.linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a [href]="'mailto:' + c.email">Email</a></li>
+            <li><a [href]="c.github" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a [href]="c.linkedin" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a [href]="'mailto:' + c.email">Email ↗</a></li>
           </ul>
         </div>
         <div class="hero-photo">
           <img src="images/avatar.jpg" alt="Portrait d'Eya Sahnoun" width="720" height="1280" />
-          <span class="orbit orbit-4" style="--c: var(--c-web)" aria-hidden="true"><i>&lt;/&gt;</i>Angular</span>
-          <span class="orbit orbit-1" style="--c: var(--c-mobile)" aria-hidden="true"><i>F</i>Flutter</span>
-          <span class="orbit orbit-2" style="--c: var(--c-agent)" aria-hidden="true"><i>AI</i>Agents LLM</span>
-          <span class="orbit orbit-3" style="--c: var(--c-devops)" aria-hidden="true"><i>CI</i>Docker · CI/CD</span>
           <div class="hero-badge">
             <strong>2 ans</strong>
             <span>d'expérience en production</span>
@@ -60,13 +50,14 @@ import { Reveal } from '../shared/reveal.directive';
       <div class="container">
         <div class="section-head" appReveal>
           <div>
-            <p class="kicker">Ce que je fais</p>
+            <p class="kicker">Domaines d'expertise</p>
             <h2>Du web à l'IA agentique, jusqu'à la mise en production</h2>
           </div>
         </div>
-        <div class="domain-grid">
-          @for (d of domains; track d.name) {
-            <article class="domain" [style.--c]="d.color" appReveal>
+        <div class="domain-grid" appReveal>
+          @for (d of domains; track d.name; let i = $index) {
+            <article class="domain">
+              <span class="domain-num">{{ pad(i + 1) }}</span>
               <span class="domain-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   @switch (d.icon) {
@@ -103,9 +94,9 @@ import { Reveal } from '../shared/reveal.directive';
 
     <section class="container">
       <ul class="stats" appReveal>
-        <li><strong>{{ jobs.length }}</strong><span>expériences en entreprise</span></li>
-        <li><strong>{{ projectCount }}</strong><span>projets web, mobile, DevOps et IA</span></li>
-        <li><strong>{{ certCount }}</strong><span>certifications (AZ-900, AI-900, DELF B2)</span></li>
+        <li><strong>{{ pad(jobs.length) }}</strong><span>expériences en entreprise</span></li>
+        <li><strong>{{ pad(projectCount) }}</strong><span>projets web, mobile, DevOps et IA</span></li>
+        <li><strong>{{ pad(certCount) }}</strong><span>certifications · AZ-900, AI-900, DELF B2</span></li>
         <li><strong>IIT</strong><span>cycle ingénieur en génie logiciel</span></li>
       </ul>
     </section>
@@ -160,13 +151,14 @@ import { Reveal } from '../shared/reveal.directive';
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="cta" appReveal>
+    <section class="container">
+      <div class="cta" appReveal>
+        <div>
+          <p class="kicker">Contact</p>
           <h2>Un projet, une offre, une question ?</h2>
           <p>Je réponds rapidement par email ou par téléphone.</p>
-          <a class="btn btn-primary" routerLink="/contact">Travaillons ensemble</a>
         </div>
+        <a class="btn btn-primary" routerLink="/contact">Travaillons ensemble <span aria-hidden="true">→</span></a>
       </div>
     </section>
   `,
@@ -177,6 +169,7 @@ export class Home {
   protected readonly techs = techs;
   protected readonly marquee = [...techs, ...techs];
   protected readonly typed = signal(roles[0]);
+  protected readonly pad = (n: number) => String(n).padStart(2, '0');
 
   constructor() {
     const destroyRef = inject(DestroyRef);

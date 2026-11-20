@@ -21,7 +21,6 @@ export const roles = ['Développeuse Web', 'Développeuse Mobile', 'Ingénieure 
 
 export interface Domain {
   name: string;
-  color: string;
   icon: 'web' | 'mobile' | 'ia' | 'agent' | 'devops';
   text: string;
   tags: string[];
@@ -30,35 +29,30 @@ export interface Domain {
 export const domains: Domain[] = [
   {
     name: 'Web',
-    color: 'var(--c-web)',
     icon: 'web',
     text: 'Applications full-stack, ERP/CRM et APIs REST sécurisées.',
     tags: ['Angular', 'Spring Boot', 'Laravel', 'ASP.NET'],
   },
   {
     name: 'Mobile',
-    color: 'var(--c-mobile)',
     icon: 'mobile',
     text: 'Applications Android et iOS connectées au temps réel.',
     tags: ['Flutter', 'Dart', 'Firebase'],
   },
   {
     name: 'IA',
-    color: 'var(--c-ia)',
     icon: 'ia',
     text: 'Deep learning : prédiction, classification de signaux.',
     tags: ['TensorFlow', 'PyTorch', 'LSTM', 'CNN'],
   },
   {
     name: 'IA agentique',
-    color: 'var(--c-agent)',
     icon: 'agent',
     text: 'Agents LLM qui raisonnent, utilisent des outils et citent leurs sources.',
     tags: ['LangGraph', 'RAG', 'LLM', 'pgvector'],
   },
   {
     name: 'DevOps',
-    color: 'var(--c-devops)',
     icon: 'devops',
     text: 'Conteneurs, CI/CD, déploiement cloud et supervision.',
     tags: ['Docker', 'GitHub Actions', 'Azure', 'Grafana'],
@@ -83,6 +77,8 @@ export interface Project {
   summary: string;
   points: string[];
   stack: string[];
+  /** Libellé court affiché à droite du titre. */
+  tagline: string;
   featured?: boolean;
   /** Captures d'écran : chemins sous public/, par ex. 'images/projets/sahtek/1.png' */
   shots: string[];
@@ -91,6 +87,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'sahtek',
+    tagline: 'Temps réel · Bio-santé',
     title: 'Sahtek, application mobile de santé',
     kind: 'Projet personnel',
     year: '2026',
@@ -109,6 +106,7 @@ export const projects: Project[] = [
   },
   {
     id: 'erp-copilot',
+    tagline: 'Agent graph · pgvector',
     title: 'ERP Copilot, assistant IA agentique avec RAG',
     kind: 'Projet IA générative',
     year: '2026',
@@ -126,6 +124,7 @@ export const projects: Project[] = [
   },
   {
     id: 'cicd-sahtek',
+    tagline: 'Automatisation · Observabilité',
     title: 'Chaîne CI/CD et supervision de Sahtek',
     kind: 'Projet DevOps',
     year: '2026',
@@ -143,6 +142,7 @@ export const projects: Project[] = [
   },
   {
     id: 'entrepot',
+    tagline: 'Data warehouse · SSIS',
     title: 'Entrepôt de données et tableaux de bord',
     kind: 'Projet académique',
     year: '2025',
@@ -157,6 +157,7 @@ export const projects: Project[] = [
   },
   {
     id: 'ecg',
+    tagline: 'Signal · CNN 1D multi-label',
     title: 'Classification d’ECG',
     kind: 'Deep learning',
     year: '2025',
@@ -172,6 +173,7 @@ export const projects: Project[] = [
   },
   {
     id: 'voitures',
+    tagline: 'E-commerce · RBAC',
     title: 'Plateforme automobile, voitures neuves et d’occasion',
     kind: 'Application Laravel',
     year: 'Projet web',
