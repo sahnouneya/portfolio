@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "gallery": "node scripts/gallery-manifest.mjs",
+    "prestart": "npm run gallery",
     "start": "ng serve",
+    "prebuild": "npm run gallery",
     "build": "ng build",
     "watch": "ng build --watch --configuration development"
   },

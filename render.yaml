@@ -1,0 +1,29 @@
+# Déploiement Render (Blueprint) : site statique prérendu par Angular.
+# Render reconstruit le site à chaque push sur main : les captures déposées dans
+# public/images/projets/<id>/ sont donc prises en compte automatiquement.
+services:
+  - type: web
+    name: portfolio-eya-sahnoun
+    runtime: static
+    branch: main
+    autoDeploy: true
+    buildCommand: npm ci && npm run build
+    staticPublishPath: main/Pages_html
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+    routes:
+      # Adresse inconnue : l'application Angular prend le relais (et renvoie vers l'accueil).
+      - type: rewrite
+        source: /*
+        destination: /index.csr.html
+    headers:
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

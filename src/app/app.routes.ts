@@ -14,6 +14,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/projects').then((m) => m.Projects),
   },
   {
+    path: 'galerie',
+    title: prefix + 'Mes réalisations',
+    loadComponent: () => import('./pages/gallery').then((m) => m.Gallery),
+  },
+  {
     path: 'experience',
     title: prefix + 'Expérience',
     loadComponent: () => import('./pages/experience').then((m) => m.Experience),

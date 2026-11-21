@@ -1304,6 +1304,281 @@ a.card:hover {
   margin: 0;
 }
 
+/* ---------- Galerie des réalisations ---------- */
+.gallery-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+
+.shot-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.shot-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+}
+
+.shot-cover {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 12px 12px 0;
+  padding: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-soft);
+  cursor: zoom-in;
+}
+
+.shot-cover:disabled {
+  cursor: default;
+}
+
+.shot-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.shot-card:hover .shot-cover img {
+  transform: scale(1.04);
+}
+
+.shot-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  background: var(--ink);
+  color: var(--on-ink);
+  font: 500 0.62rem/1.4 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.shot-empty {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  height: 100%;
+  background: repeating-linear-gradient(135deg, transparent 0 10px, var(--border) 10px 11px);
+}
+
+.shot-empty-num {
+  font: 400 3rem/1 var(--font-head);
+  color: var(--accent);
+}
+
+.shot-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 24px 24px;
+}
+
+.shot-body .card-meta {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.shot-body h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.shot-body p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.shot-body .tags {
+  margin-bottom: 22px;
+}
+
+.shot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+/* Lightbox */
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: min(1100px, calc(100vw - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: lightbox-in 0.25s ease;
+}
+
+.lightbox::backdrop {
+  background: rgba(20, 19, 18, 0.82);
+  backdrop-filter: blur(3px);
+}
+
+.lightbox-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lightbox-head h2 {
+  margin: 4px 0 0;
+  font-size: 1.2rem;
+}
+
+.lightbox-head .icon-btn {
+  flex-shrink: 0;
+}
+
+.lightbox-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  flex: 1;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: calc(100dvh - 190px);
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  animation: lightbox-in 0.3s ease;
+  user-select: none;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lightbox-arrow:hover {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.lightbox-arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lightbox-arrow.prev {
+  left: 8px;
+}
+
+.lightbox-arrow.next {
+  right: 8px;
+}
+
+.lightbox-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lightbox-dots button {
+  width: 22px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+}
+
+.lightbox-dots button:hover {
+  background: var(--muted);
+}
+
+.lightbox-dots button.is-active {
+  width: 36px;
+  background: var(--accent);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 14px;
+  }
+
+  .lightbox-arrow {
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+  }
+
+  .lightbox-arrow.prev {
+    left: 4px;
+  }
+
+  .lightbox-arrow.next {
+    right: 4px;
+  }
+}
+
 /* ---------- Pied de page ---------- */
 .site-footer {
   margin-top: 64px;

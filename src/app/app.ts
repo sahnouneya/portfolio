@@ -112,6 +112,7 @@ export class App {
   protected readonly links = [
     { path: '/', label: 'Accueil' },
     { path: '/projets', label: 'Projets' },
+    { path: '/galerie', label: 'Galerie' },
     { path: '/experience', label: 'Expérience' },
     { path: '/competences', label: 'Compétences' },
     { path: '/parcours', label: 'Parcours' },
